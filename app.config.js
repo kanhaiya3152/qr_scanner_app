@@ -1,8 +1,6 @@
-import 'dotenv/config';
-
 export default {
   expo: {
-    name: "QR Scanner App",
+    name: "qr-scanner-app",
     slug: "qr-scanner-app",
     version: "1.0.0",
     orientation: "portrait",
@@ -13,24 +11,16 @@ export default {
       resizeMode: "contain",
       backgroundColor: "#ffffff"
     },
+    updates: {
+      fallbackToCacheTimeout: 0
+    },
     assetBundlePatterns: ["**/*"],
     ios: {
-      supportsTablet: true,
-      infoPlist: {
-        NSCameraUsageDescription: "This app needs access to camera to scan QR codes."
-      }
+      supportsTablet: true
     },
     android: {
-      adaptiveIcon: {
-        foregroundImage: "./assets/adaptive-icon.png",
-        backgroundColor: "#FFFFFF"
-      },
-      permissions: [
-        "CAMERA",
-        "ACCESS_FINE_LOCATION",
-        "ACCESS_COARSE_LOCATION"
-      ],
-      package: "com.kanhaiya25.qrscannerapp"
+      package: "com.kanhaiya25.qrscannerapp",
+      versionCode: 1
     },
     web: {
       favicon: "./assets/favicon.png"
@@ -42,6 +32,7 @@ export default {
       firebaseStorageBucket: process.env.FIREBASE_STORAGE_BUCKET,
       firebaseMessagingSenderId: process.env.FIREBASE_MESSAGING_SENDER_ID,
       firebaseAppId: process.env.FIREBASE_APP_ID,
+
       eas: {
         projectId: "c87e7e73-b804-44df-9f6c-9f599830563f"
       }
